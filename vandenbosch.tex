@@ -22,14 +22,14 @@
 \usepackage{ccn}
 \usepackage{pslatex}
 \usepackage{apacite}
-
+\usepackage{graphicx}
 
 \title{Familiarity strengthens visual object representations}
  
 \author{{\large \bf Jasper J.F. van den Bosch (vandejjf@bham.ac.uk)} \\
   A Department, 1234 Example Street\\
 A City, State 12345 A country
-  \AND {\large \bf Cyril Pernet (AnotherPerson@this.planet.edu)} \\
+  \AND {\large \bf Cyril Pernet (cyril.pernet@ed.ac.uk)} \\
   A Department, 1234 Example Street\\
 A City, State 12345 A country
   \AND {\large \bf Ian Charest (charesti@bham.ac.uk)} \\
@@ -45,51 +45,94 @@ A City, State 12345 A country}
 \section{Abstract}
 {
 \bf
-The abstract should be identical to the text version submitted in the webform and should not exceed 1,500 characters, including spaces and any special characters. The abstract should thus be relatively short. Aim for 150 words.
-Max length is 200 words. Arbitrarily long German words like "Donaudampfschiffartskapit\"an" are not encouraged.
-CCN has an interdisciplinary audience. Hence a good abstract should
-(a) give context about what the problem is and why it matters 
-(b) give the contents and explain what was done and what was found
-(c) give a clear conclusion including what we learned and how it changes 
-the way we think about the universe.
-And because Konrad is writing this, he can not avoid shamelessly plugging
-his writing guide:
-\url{goo.gl/vC8tvf} See you at CCN.
+We are exposed to personally meaningful objects throughout the 
+course of our life, and this must  be reflected in the brain. 
+Despite evidence for larger brain activity, the impact of 
+familiarity on the spatio-temporal dynamics of object recognition 
+remains poorly understood. Here we set out to track neural 
+representations of familiar and unfamiliar objects in the human 
+brain as they evolve in space and time. Participants (n=20), 
+saw personally-meaningful and unfamiliar objects matched in 
+category and concept (72 images, including faces, bodies, 
+places, objects and pets) while we recorded electroencephalography 
+(EEG) and functional Magnetic Resonance Imaging (fMRI) (in separate 
+sessions). Using similarity-based fusion, we combined the precise 
+temporal resolution of EEG with the precise spatial resolution of 
+fMRI to map the spatio-temporal trajectories of personally-meaningful 
+and unfamiliar object representations. These followed the typical 
+cascade of visual processes bilaterally from primary visual cortex 
+(V1; ~90ms) through to the ventral and dorsal streams (~130ms). 
+Critically, our results strengthen our understanding of the interactions 
+between the visual sensory system, the medial temporal lobes, and 
+the prefrontal cortex in recognising visual objects. 
 }
 \begin{quote}
 \small
 \textbf{Keywords:} 
-add your choice of indexing terms or keywords; kindly use a
-semicolon; between each term
+familiarity; fmri; eeg; rsa
 \end{quote}
 
-\section{General Formatting Instructions}
+\section{Introduction}
 
-The entire contribution of a short summary submission (including
-figures, references, and anything else) can be no longer than four
-pages. This short summary format is to be used for workshop and
-tutorial descriptions, symposia summaries, and publication-based
-presentation extended abstracts.
+The things we see everyday vary greatly in how well we know them. 
+Many lab experiments on object vision use images of things that 
+the participant has not seen before. However, familiarity with 
+an object has been observed to improve recognition performance, 
+suggesting that it plays a key role in how we process the stimulus. 
+This effect has been widely studied in faces; documenting a response 
+80ms faster for familiar faces on several tasks (Ramon and Gobbini 2018, 
+Visconti di Oleggio Castello et al. 2017). 
+Electroencephalography (EEG) studies revealed  amplified neural 
+activity in response to familiar objects (Herzmann et al. 2004). 
+Functional differences between familiar and unfamiliar objects 
+have also been revealed using functional Magnetic Resonance Imaging (fMRI)
+\cite{Barense2011-bl,McLelland2014-es,Taylor2009-hw,Trinkler2009-dm} 
+Studies increasingly turn to multivariate pattern analyses (MVPA) 
+to characterise finer distinctions between experimental conditions 
+from the experimental data. For example, Representational Similarity 
+Analyses (RSA; Kriegeskorte et al. 2008), enables measuring fine-grained 
+representational geometries in different regions of the brain, 
+and testing specific hypothesis with computational or theoretical 
+models (Kriegeskorte and Kievit 2013). This yielded an understanding 
+of the functional properties of human inferior temporal cortex, 
+with activity patterns clustering according to categories 
+(Haxby et al. 2001; Kriegeskorte et al. 2008), which in turn are 
+reflected in perceived similarity judgements (Mur et al. 2013).  
+Linear classifiers applied to M/EEG data further revealed that 
+individual object exemplars can be decoded from around 100ms 
+after their presentation (Carlson et al. 2013). 
 
-The text of the paper should be formatted in two columns with an
-overall width of 7 inches (17.8 cm) and length of 9.25 inches (23.5
-cm), with 0.25 inches between the columns. Leave two line spaces
-between the last author listed and the text of the paper. The left
-margin should be 0.75 inches and the top margin should be 1 inch.
-Use 10~point Modern with 12~point vertical spacing, unless
-otherwise specified.
+Representational geometries measured using RSA can be 
+compared between measurement modalities, lending it to 
+map object representations in space and time 
+(Cichy et al. 2014; Cichy et al. 2016). One key aspect of 
+familiarity is its idiosyncratic nature; we each have a 
+different level of familiarity with a given thing. In previous work 
+(Charest et al. 2014), we observed that the object representations 
+in IT reflect such differences, and that these are stable across days. 
+More recently, a study of face perception using RSA found that 
+representations of famous celebrity faces, which have a degree of 
+familiarity for all participants, are enhanced early on when 
+compared to unfamiliar faces (Dobs et al. 2019). 
 
-The title should be in 14~point, bold, and centered. The title should
-be formatted with initial caps (the first letter of content words
-capitalized and the rest lower case). Each author's name should appear
-on a separate line, 11~point bold, and centered, with the author's
-email address in parentheses. Under each author's name list the
-author's affiliation and postal address in ordinary 10~point type.
+Here, we collected EEG and fMRI data while participants viewed 
+personally meaningful or unfamiliar images, from a wide range 
+of object categories including animals, bodies, faces, objects, 
+and places. Using RSA, we combine data from both modalities to 
+reveal the role of familiarity in object as representations 
+unfold in space and time.
 
-Indent the first line of each paragraph by 1/8~inch (except for the
-first paragraph of a new section). Do not add extra vertical space
-between paragraphs.
-
+\begin{figure}[t]
+\begin{center}
+\includegraphics[width=\linewidth]{figures/figure1.png}
+\end{center}
+\caption{
+  Stimulus materials. The first two rows depict example 
+  stimuli for a pair of participant. The bottom row depicts the 
+  visual object images shown to all pairs of participants.
+} 
+\label{sample-figure}
+\end{figure}
 
 \section{First Level Headings}
 
@@ -108,23 +151,9 @@ space below the heading.
 \subsubsection{Third Level Headings}
 
 Third level headings should be 10~point, initial caps, bold, and flush
-left. Leave one line space above the heading, but no space after the
-heading.
+left. Leave one line space above the heading, but no space after.
 
 
-\section{Formalities, Footnotes, and Floats}
-
-Use standard APA citation format. Citations within the text should
-include the author's last name and year. If the authors' names are
-included in the sentence, place only the year in parentheses, as in
-\citeA{NewellSimon1972a}, but otherwise place the entire reference in
-parentheses with the authors and year separated by a comma
-\cite{NewellSimon1972a}. List multiple references alphabetically and
-separate them by semicolons
-\cite{ChalnickBillman1988a,NewellSimon1972a}. Use the
-``et~al.'' construction only after listing all the authors to a
-publication in an earlier reference and for citations with four or
-more authors.
 
 
 \subsection{Footnotes}
