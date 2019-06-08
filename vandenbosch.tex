@@ -27,14 +27,11 @@
 \title{Familiarity strengthens visual object representations}
  
 \author{{\large \bf Jasper J.F. van den Bosch (vandejjf@bham.ac.uk)} \\
-  A Department, 1234 Example Street\\
-A City, State 12345 A country
-  \AND {\large \bf Cyril Pernet (cyril.pernet@ed.ac.uk)} \\
-  A Department, 1234 Example Street\\
-A City, State 12345 A country
+  School of Psychology, University of Birmingham\\
+  Birmingham, B15 2TT, United Kingdom
   \AND {\large \bf Ian Charest (charesti@bham.ac.uk)} \\
-  A Department, 1234 Example Street\\
-A City, State 12345 A country}
+  School of Psychology, University of Birmingham\\
+  Birmingham, B15 2TT, United Kingdom}
 
 
 \begin{document}
@@ -80,40 +77,40 @@ the participant has not seen before. However, familiarity with
 an object has been observed to improve recognition performance, 
 suggesting that it plays a key role in how we process the stimulus. 
 This effect has been widely studied in faces; documenting a response 
-80ms faster for familiar faces on several tasks (Ramon and Gobbini 2018, 
-Visconti di Oleggio Castello et al. 2017). 
+80ms faster for familiar faces on several tasks 
+\cite{Ramon2018-ou,Di_Oleggio_Castello2015-ij}. 
 Electroencephalography (EEG) studies revealed  amplified neural 
 activity in response to familiar objects (Herzmann et al. 2004). 
 Functional differences between familiar and unfamiliar objects 
 have also been revealed using functional Magnetic Resonance Imaging (fMRI)
-\cite{Barense2011-bl,McLelland2014-es,Taylor2009-hw,Trinkler2009-dm} 
+\cite{Barense2011-td,McLelland2014-nw,Taylor2009-qu,Trinkler2009-zy} 
 Studies increasingly turn to multivariate pattern analyses (MVPA) 
 to characterise finer distinctions between experimental conditions 
 from the experimental data. For example, Representational Similarity 
-Analyses (RSA; Kriegeskorte et al. 2008), enables measuring fine-grained 
+Analyses (RSA; \cite{Kriegeskorte2008-bp}), enables measuring fine-grained 
 representational geometries in different regions of the brain, 
 and testing specific hypothesis with computational or theoretical 
-models (Kriegeskorte and Kievit 2013). This yielded an understanding 
+models \cite{Kriegeskorte2013-md}. This yielded an understanding 
 of the functional properties of human inferior temporal cortex, 
 with activity patterns clustering according to categories 
-(Haxby et al. 2001; Kriegeskorte et al. 2008), which in turn are 
-reflected in perceived similarity judgements (Mur et al. 2013).  
+\cite{Haxby2001-kl,Kriegeskorte2008-bp}, which in turn are 
+reflected in perceived similarity judgements \cite{Mur2013-ej}.  
 Linear classifiers applied to M/EEG data further revealed that 
 individual object exemplars can be decoded from around 100ms 
-after their presentation (Carlson et al. 2013). 
+after their presentation \cite{Carlson2013-fw}. 
 
 Representational geometries measured using RSA can be 
 compared between measurement modalities, lending it to 
 map object representations in space and time 
-(Cichy et al. 2014; Cichy et al. 2016). One key aspect of 
+\cite{Cichy2014-bd,Cichy2016-tp}. One key aspect of 
 familiarity is its idiosyncratic nature; we each have a 
 different level of familiarity with a given thing. In previous work 
-(Charest et al. 2014), we observed that the object representations 
+\cite{Charest2014-zn}, we observed that the object representations 
 in IT reflect such differences, and that these are stable across days. 
 More recently, a study of face perception using RSA found that 
 representations of famous celebrity faces, which have a degree of 
 familiarity for all participants, are enhanced early on when 
-compared to unfamiliar faces (Dobs et al. 2019). 
+compared to unfamiliar faces \cite{Dobs2019-ov}. 
 
 Here, we collected EEG and fMRI data while participants viewed 
 personally meaningful or unfamiliar images, from a wide range 
@@ -139,7 +136,7 @@ unfold in space and time.
 \subsection{Stimuli}
 
 The experimental design and stimulus conditions were identical to 
-(Charest et al. 2014). Briefly, participants were asked to provide 
+\cite{Charest2014-zn}. Briefly, participants were asked to provide 
 18 images depicting objects in their daily environment (including 
 faces, bodies, places, objects and pets). Participants were paired, 
 and a pair of participants saw each other’s personally meaningful 
@@ -246,19 +243,29 @@ representational geometries (Charest et al. 2018).
   \label{fig2}
   \end{figure}
 
+\section{Results}
+
+To characterise the temporal dynamics of object recognition for familiar and
+unfamiliar images, we constructed RDMs for each time point using cross-validated
+linear classifiers across all pairs of visual object images. Averaging the upper
+triangular vector of decoding accuracies, revealed significant image decoding
+for both familiar and unfamiliar images. Larger decoding accuracies were
+observed for familiar objects from ~350ms until 650ms post stimulus onset
+(Figure~\ref{fig2}). 
+
 \begin{figure*}[t]
-  \begin{center}
-  \includegraphics[width=\linewidth]{figures/figure3.png}
-  \end{center}
-  \caption{
-    Similarity-based fusion of electroencephalography and functional magnetic
-    resonance imaging for familiar (red trace) and unfamiliar images (blue
-    trace). Significant time points are depicted with red and blue horizontal
-    bars. We observed significantly larger fusion in the temporo-parietal
-    junction from 250ms until 300ms (black horizontal bar)
-  } 
-  \label{fig3}
-  \end{figure*}
+\begin{center}
+\includegraphics[width=\linewidth]{figures/figure3.png}
+\end{center}
+\caption{
+  Similarity-based fusion of electroencephalography and functional magnetic
+  resonance imaging for familiar (red trace) and unfamiliar images (blue
+  trace). Significant time points are depicted with red and blue horizontal
+  bars. We observed significantly larger fusion in the temporo-parietal
+  junction from 250ms until 300ms (black horizontal bar)
+} 
+\label{fig3}
+\end{figure*}
 
 \section{Acknowledgments}
 
