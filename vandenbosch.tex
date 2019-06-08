@@ -134,116 +134,112 @@ unfold in space and time.
 \label{fig1}
 \end{figure*}
 
-\section{First Level Headings}
+\section{Methods}
 
-First level headings should be in 12~point, initial caps, bold and
-centered. Leave one line space above the heading and 1/4~line space
-below the heading.
+\subsection{Stimuli}
 
-
-\subsection{Second Level Headings}
-
-Second level headings should be 11~point, initial caps, bold, and
-flush left. Leave one line space above the heading and 1/4~line
-space below the heading.
-
-
-\subsubsection{Third Level Headings}
-
-Third level headings should be 10~point, initial caps, bold, and flush
-left. Leave one line space above the heading, but no space after.
+The experimental design and stimulus conditions were identical to 
+(Charest et al. 2014). Briefly, participants were asked to provide 
+18 images depicting objects in their daily environment (including 
+faces, bodies, places, objects and pets). Participants were paired, 
+and a pair of participants saw each other’s personally meaningful 
+images, and a set of 36 conceptually matched images of objects from 
+the same categories, shown to all participant pairs. This resulted 
+in a total set of 72 stimuli (Figure~\ref{fig1}).
 
 
+\subsection{Electroencephalography}
 
+20 participants (10 female, age=23.2+-6.11) were recruited for the 
+EEG. The participants had normal or corrected to normal vision, 
+and no history of neurological conditions. Participants were either 
+awarded course credits or a financial compensation (£7/h) for 
+participating in the experiment. The experiment was approved by the 
+local ethics committee at the University of Birmingham.
+The EEG experiment was divided in 30 short 5 minute runs. In each run, 
+the 72 stimuli were each presented once in a random order. Stimuli were 
+shown for 500 ms, followed by a white fixation cross for 1500 ms (+- 
+random 250ms jitter before the next trial). Every five trials, the 
+participants were presented with a screen for 3 seconds that reminded 
+them to blink their eyes. This helped reducing the number of blinks 
+observed in the trials of interest. An additional 20% of catch trials 
+were included in each run at random, with the picture of a paper clip 
+being shown for 1 s, and participants had to press the keyboard key ‘m’ 
+as quickly as possible when they saw the paper clip. These trials enabled 
+to monitor that participants were paying attention to the task and were 
+later discarded from further analyses. EEG recordings were collected 
+using a high-density EEG system (128 channel BIOSEMI active system, 
+with an additional 3 electrodes positioned on the two mastoids and 
+beneath the participant’s dominant eye) at a sampling frequency of 
+1024Hz. Condition trials were epoched from -.5s to 1.5s relative to 
+stimulus onset.  Baseline correction was applied to each trial using 
+a time-window centered between -.5s and the stimulus onset). This 
+resulted in 30 epoched trials for each of the 72 conditions per participant.
 
-\subsection{Footnotes}
+\subsection{functional Magnetic Resonance Imaging}
 
-Indicate footnotes with a number\footnote{Sample of the first
-footnote.} in the text. Place the footnotes in 9~point type at the
-bottom of the column on which they appear. Precede the footnote block
-with a horizontal rule.\footnote{Sample of the second footnote.}
+20 participants (10 female, age=22.3+-4.12) were recruited from the 
+Medical Research Council participant panel. Participants were provided 
+with a financial compensation of £7/hour for their participation. The 
+participants had normal or corrected to normal vision, no history of 
+neurological conditions, and were screened for suitability for fMRI 
+scanning. The experiment was approved by the Cambridge Psychology 
+Research Ethics Committee. Results from this same data set have been 
+published previously (Charest et al. 2014).
 
+Noteworthy, our EEG and fMRI participants came from two independent 
+samples.  The fMRI experiment has been described previously 
+(Charest et al. 2014). Participants were presented with the 
+stimuli and were asked to indicate on each trial whether the 
+image presented had their or global details altered by pressing 
+a button placed underneath their middle finger. If the image was 
+the original image (no alterations), participants pressed a button 
+placed underneath their index finger.  
 
-\subsection{Tables}
+fMRI volumes were first converted to DICOM, and organised using the 
+Brain Imaging Data Standards (BIDS, Gorgolewski et al. 2016). The 
+BIDS dataset was then pre-processed using fMRI-prep (Esteban et al. 2019). 
+EPI images were slice-time corrected, corrected for spatial alignment, 
+and normalised to the Montreal Neurological Institute ICBM template 
+space (Mazziotta et al. 2001). After this initial pre-processing, we 
+used GLMdenoise (Kay et al. 2013; Charest et al. 2018) to fit the 
+EPI data. 
 
-Number tables consecutively. Place the table number and title (in
-10~point) above the table with one line space above the caption and
-one line space below it, as in Table~\ref{sample-table}. You may float
-tables to the top or bottom of a column, or set wide tables across
-both columns.
+\subsection{Representational Similarity Analysis}
 
-\begin{table}[!ht]
-\begin{center} 
-\caption{Sample table title.} 
-\label{sample-table} 
-\vskip 0.12in
-\begin{tabular}{ll} 
-\hline
-Error type    &  Example \\
-\hline
-Take smaller        &   63 - 44 = 21 \\
-Always borrow~~~~   &   96 - 42 = 34 \\
-0 - N = N           &   70 - 47 = 37 \\
-0 - N = 0           &   70 - 47 = 30 \\
-\hline
-\end{tabular} 
-\end{center} 
-\end{table}
+To characterise the temporal dynamics of the brain representational 
+geometries, we used representational dissimilarity matrices (RDMs) 
+constructed from each time point of the EEG data. We used a linear 
+discriminant analysis for each pair of stimuli at each time point 
+using MVPA-Light (http://www.github.com/trederm/MVPA-Light) in 
+Matlab (The MathWorks, Natinck, USA). The features provided to 
+the LDA were the 128 electrode activity patterns for a given time 
+point. Importantly the LDA analysis was performed using a stratified 
+k-fold cross-validation scheme (5-fold cross-validation, 5 repetitions) 
+applied to out of sample test data, preventing from overfitting. For 
+each pair, the averaged cross-validated decoding accuracy was used 
+as a proxy for that pair’s distance in a representational space.
 
-
-\subsection{Figures}
-
-Make sure that the artwork can be printed well (e.g. dark colors) and that 
-the figures make understanding the paper easy.
- Number figures sequentially, placing the figure
-number and caption, in 10~point, after the figure with one line space
-above the caption and one line space below it, as in
-Figure~\ref{sample-figure}. If necessary, leave extra white space at
-the bottom of the page to avoid splitting the figure and figure
-caption. You may float figures to the top or bottom of a column, or
-set wide figures across both columns.
-
-\begin{figure}[ht]
-\begin{center}
-\fbox{CCN figure}
-\end{center}
-\caption{This is a figure.} 
-\label{sample-figure}
-\end{figure}
+The fMRI beta estimates provided by GLMdenoise were normalised 
+using a univariate normalisation (Misaki et al. 2010) before 
+entering an RSA searchlight analyses. The RSA searchlight analysis 
+was performed using pyRSA ( https://github.com/Charestlab/pyrsa ).  
+The fMRI volumes were segmented in 6mm diameter spheres centred 
+on every voxel contained inside the participant’s brain. For each 
+sphere, we extracted the 72 t-patterns (one t-pattern per visual 
+condition) indexed by the voxels of the sphere. From these voxel 
+t-patterns, we constructed RDMs using a Pearson correlation distance, 
+and this RDM was assigned to the voxel at the center of the 
+searchlight sphere. The Pearson correlation distance applied on 
+univariate normalised GLMdenoised beta estimates was chosen after 
+having previously shown to be the most reliable measure of 
+representational geometries (Charest et al. 2018). 
 
 
 \section{Acknowledgments}
 
-Place acknowledgments (including funding information) in a section at
-the end of the paper.
-
-
-\section{References Instructions}
-
-Follow the APA Publication Manual for citation format, both within the
-text and in the reference list, with the following exceptions: (a) do
-not cite the page numbers of any book, including chapters in edited
-volumes; (b) use the same format for unpublished references as for
-published ones. Alphabetize references by the surnames of the authors,
-with single author entries preceding multiple author entries. Order
-references by the same authors by the year of publication, with the
-earliest first.
-
-Use a first level section heading, ``{\bf References}'', as shown
-below. Use a hanging indent style, with the first line of the
-reference flush against the left margin and subsequent lines indented
-by 1/8~inch. Below are example references for a conference paper, book
-chapter, journal article, dissertation, book, technical report, and
-edited volume, respectively.
-
-\nocite{ChalnickBillman1988a}
-\nocite{Feigenbaum1963a}
-\nocite{Hill1983a}
-\nocite{OhlssonLangley1985a}
-% \nocite{Lewis1978a}
-\nocite{Matlock2001}
-\nocite{NewellSimon1972a}
-\nocite{ShragerLangley1990a}
+This work was supported by an European Research Council (ERC) 
+Starting Grant ERC-2017-StG 759432 (to I.C.)
 
 
 \bibliographystyle{apacite}
