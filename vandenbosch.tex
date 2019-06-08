@@ -182,11 +182,11 @@ participants had normal or corrected to normal vision, no history of
 neurological conditions, and were screened for suitability for fMRI 
 scanning. The experiment was approved by the Cambridge Psychology 
 Research Ethics Committee. Results from this same data set have been 
-published previously (Charest et al. 2014).
+published previously \cite{Charest2014-zn}.
 
 Noteworthy, our EEG and fMRI participants came from two independent 
 samples.  The fMRI experiment has been described previously 
-(Charest et al. 2014). Participants were presented with the 
+\cite{Charest2014-zn}. Participants were presented with the 
 stimuli and were asked to indicate on each trial whether the 
 image presented had their or global details altered by pressing 
 a button placed underneath their middle finger. If the image was 
@@ -194,12 +194,12 @@ the original image (no alterations), participants pressed a button
 placed underneath their index finger.  
 
 fMRI volumes were first converted to DICOM, and organised using the 
-Brain Imaging Data Standards (BIDS, Gorgolewski et al. 2016). The 
-BIDS dataset was then pre-processed using fMRI-prep (Esteban et al. 2019). 
+Brain Imaging Data Standards (BIDS, \cite{Gorgolewski2016-ot}). The 
+BIDS dataset was then pre-processed using fMRI-prep \cite{Esteban2019-od}. 
 EPI images were slice-time corrected, corrected for spatial alignment, 
 and normalised to the Montreal Neurological Institute ICBM template 
-space (Mazziotta et al. 2001). After this initial pre-processing, we 
-used GLMdenoise (Kay et al. 2013; Charest et al. 2018) to fit the 
+space \cite{Mazziotta2001-lt}. After this initial pre-processing, we 
+used GLMdenoise \cite{Kay2013-in,Charest2018-mk} to fit the 
 EPI data. 
 
 \subsection{Representational Similarity Analysis}
@@ -208,7 +208,7 @@ To characterise the temporal dynamics of the brain representational
 geometries, we used representational dissimilarity matrices (RDMs) 
 constructed from each time point of the EEG data. We used a linear 
 discriminant analysis for each pair of stimuli at each time point 
-using MVPA-Light (http://www.github.com/trederm/MVPA-Light) in 
+using MVPA-Light \url{http://www.github.com/trederm/MVPA-Light} in 
 Matlab (The MathWorks, Natinck, USA). The features provided to 
 the LDA were the 128 electrode activity patterns for a given time 
 point. Importantly the LDA analysis was performed using a stratified 
@@ -220,7 +220,7 @@ as a proxy for that pair’s distance in a representational space.
 The fMRI beta estimates provided by GLMdenoise were normalised 
 using a univariate normalisation (Misaki et al. 2010) before 
 entering an RSA searchlight analyses. The RSA searchlight analysis 
-was performed using pyRSA ( https://github.com/Charestlab/pyrsa ).  
+was performed using pyRSA \url{https://github.com/Charestlab/pyrsa}.  
 The fMRI volumes were segmented in 6mm diameter spheres centred 
 on every voxel contained inside the participant’s brain. For each 
 sphere, we extracted the 72 t-patterns (one t-pattern per visual 
@@ -230,7 +230,14 @@ and this RDM was assigned to the voxel at the center of the
 searchlight sphere. The Pearson correlation distance applied on 
 univariate normalised GLMdenoised beta estimates was chosen after 
 having previously shown to be the most reliable measure of 
-representational geometries (Charest et al. 2018). 
+representational geometries \cite{Charest2018-mk}. 
+
+\subsection{Statistical Analyses}
+
+Statistical analyses were conducted using permutation based one-sampled t-tests
+implemented using MNE-Python (Gramfort et al. 2013). All reported tests are
+presented at a p < 0.001, controlled for multiple comparisons using a False
+Discovery Rate.
 
 \begin{figure}[ht]
   \begin{center}
@@ -252,6 +259,22 @@ triangular vector of decoding accuracies, revealed significant image decoding
 for both familiar and unfamiliar images. Larger decoding accuracies were
 observed for familiar objects from ~350ms until 650ms post stimulus onset
 (Figure~\ref{fig2}). 
+
+Early visual cortex (EVC), human inferior temporal cortex (hIT),
+temporo-parietal junction (TPJ), and medial prefrontal cortex (MPFC) RDMs were
+constructed from comparing the condition t-patterns using Pearson’s correlation.
+These RDMs were then compared to time-resolved RDMs measured with EEG using
+Spearman’s correlation coefficient. 
+
+We observed rapid and sustained
+correspondence between the fMRI and EEG representational geometries in EVC and
+hIT for the familiar and unfamiliar images. In TPJ, early and sustained
+correspondence was observed for the familiar images, with significantly larger
+Spearman correlations between 246ms and 300ms. FOr the unfamiliar images, the
+correspondence was observed much later in time, between 691ms and 1.3s
+post-stimulus onset. In the MPFC, we observed early and sustained correspondence
+from 129ms until 800ms.
+
 
 \begin{figure*}[t]
 \begin{center}
