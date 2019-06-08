@@ -66,7 +66,7 @@ the prefrontal cortex in recognising visual objects.
 \begin{quote}
 \small
 \textbf{Keywords:} 
-familiarity; fmri; eeg; rsa
+familiarity; object recognition; fmri; eeg; rsa
 \end{quote}
 
 \section{Introduction}
@@ -121,7 +121,7 @@ unfold in space and time.
 
 \begin{figure*}[t]
 \begin{center}
-\includegraphics[width=\linewidth]{figures/figure1.png}
+\includegraphics[width=\linewidth]{figures/figure1_smaller.png}
 \end{center}
 \caption{
   Stimulus materials. The first two rows depict example 
@@ -181,8 +181,8 @@ with a financial compensation of £7/hour for their participation. The
 participants had normal or corrected to normal vision, no history of 
 neurological conditions, and were screened for suitability for fMRI 
 scanning. The experiment was approved by the Cambridge Psychology 
-Research Ethics Committee. Results from this same data set have been 
-published previously \cite{Charest2014-zn}.
+Research Ethics Committee. Separate set of results from this data 
+set have been published previously \cite{Charest2014-zn}.
 
 Noteworthy, our EEG and fMRI participants came from two independent 
 samples.  The fMRI experiment has been described previously 
@@ -200,7 +200,8 @@ EPI images were slice-time corrected, corrected for spatial alignment,
 and normalised to the Montreal Neurological Institute ICBM template 
 space \cite{Mazziotta2001-lt}. After this initial pre-processing, we 
 used GLMdenoise \cite{Kay2013-in,Charest2018-mk} to fit the 
-EPI data. 
+EPI data. Regions of interest (ROIs) were extracted from
+the Glasser parcellation atlas \cite{Glasser2016-xv}. 
 
 \subsection{Representational Similarity Analysis}
 
@@ -218,9 +219,9 @@ each pair, the averaged cross-validated decoding accuracy was used
 as a proxy for that pair’s distance in a representational space.
 
 The fMRI beta estimates provided by GLMdenoise were normalised 
-using a univariate normalisation (Misaki et al. 2010) before 
+using a univariate normalisation \cite{Misaki2010-mb} before 
 entering an RSA searchlight analyses. The RSA searchlight analysis 
-was performed using pyRSA \url{https://github.com/Charestlab/pyrsa}.  
+was performed using pyRSA \url{https://github.com/Charestlab/pyrsa}.
 The fMRI volumes were segmented in 6mm diameter spheres centred 
 on every voxel contained inside the participant’s brain. For each 
 sphere, we extracted the 72 t-patterns (one t-pattern per visual 
@@ -236,12 +237,12 @@ representational geometries \cite{Charest2018-mk}.
 
 Statistical analyses were conducted using permutation based one-sampled t-tests
 implemented using MNE-Python (Gramfort et al. 2013). All reported tests are
-presented at a p < 0.001, controlled for multiple comparisons using a False
+presented at a p\textless0.001, controlled for multiple comparisons using a False
 Discovery Rate.
 
 \begin{figure}[ht]
   \begin{center}
-  \includegraphics[width=\linewidth]{figures/figure2.png}
+  \includegraphics[width=\linewidth]{figures/figure2_smaller.png}
   \end{center}
   \caption{
     Average classification accuracies and representational dissimilarity
@@ -264,13 +265,13 @@ Early visual cortex (EVC), human inferior temporal cortex (hIT),
 temporo-parietal junction (TPJ), and medial prefrontal cortex (MPFC) RDMs were
 constructed from comparing the condition t-patterns using Pearson’s correlation.
 These RDMs were then compared to time-resolved RDMs measured with EEG using
-Spearman’s correlation coefficient. 
+Spearman’s correlation coefficient (Figure~\ref{fig3}). 
 
 We observed rapid and sustained
 correspondence between the fMRI and EEG representational geometries in EVC and
 hIT for the familiar and unfamiliar images. In TPJ, early and sustained
 correspondence was observed for the familiar images, with significantly larger
-Spearman correlations between 246ms and 300ms. FOr the unfamiliar images, the
+Spearman correlations between 246ms and 300ms. For the unfamiliar images, the
 correspondence was observed much later in time, between 691ms and 1.3s
 post-stimulus onset. In the MPFC, we observed early and sustained correspondence
 from 129ms until 800ms.
@@ -289,6 +290,20 @@ from 129ms until 800ms.
 } 
 \label{fig3}
 \end{figure*}
+
+\section{Conclusion}
+
+We measured brain activity as participants were presented with images from their
+own personal environment and unfamiliar images. With linear classifier analyses
+applied to electroencephalography, we were able to decode images seen by the
+participants, and this decoding was larger for personally meaningful images. To
+better understand the neural mechanisms involved in the recognition of
+personally meaningful and unfamiliar visual objects, we combined the strengths
+of electroencephalography and functional magnetic resonance imaging using
+representational similarity based fusion. Noteworthy, we observed a rapid and
+selective involvement of the medial prefrontal cortex for personally meaningful
+images. Altogether, these results provide a precise spatio-temporal account of
+familiarity in object recognition in the human brain.
 
 \section{Acknowledgments}
 
